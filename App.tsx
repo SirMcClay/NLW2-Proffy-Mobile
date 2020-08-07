@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Landing from './src/pages/Landing';
 import { AppLoading } from 'expo';
+
+import AppStack from './src/routes/AppStack';
 
 // Note que o 'useFonts' só precisa ser importado em uma das importações de fontes
 import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo';
@@ -20,7 +21,7 @@ export default function App() {
   } else {
     return (
       <>
-        <Landing />
+        <AppStack />
         <StatusBar style="light" />
       </>
     );
