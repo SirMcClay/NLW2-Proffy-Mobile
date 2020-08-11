@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import api from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
-import TeacherItem from '../../components/TeacherItem';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
 
 import styles from './styles';
 
@@ -31,8 +31,7 @@ function TeacherList() {
       }
     });
 
-    console.log(response.data);
-
+    setIsfiltersVisible(false);
     setTeachers(response.data);
   }
 
@@ -97,11 +96,9 @@ function TeacherList() {
           paddingBottom: 0,
         }}
       >
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher: Teacher) => {
+          return <TeacherItem key={teacher.id} teacher={teacher} />
+        })}
       </ScrollView>
     </View>
   );
