@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView, Text, TextInput} from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
+import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import api from '../../services/api';
@@ -32,7 +33,7 @@ function TeacherList() {
       }
     });
   }
-  
+
   function handleToggleFiltersVisible() {
     setIsfiltersVisible(!isFiltersVisible);
   }
